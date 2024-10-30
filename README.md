@@ -1,6 +1,6 @@
 This is an example for our paper "A random forest machine learning in turbulence closure modeling for complex flows and heat transfer based on the non-equilibrium turbulence assumption"
 
-[1] First, download the training data from Google Drive and put these data into the dataRANS folder. The save link: https://drive.google.com/drive/folders/174UHlnLEjkaPs7ElPy_h6lumgCCTHBng?usp=sharing
+[1] First, download the training data from Google Drive and put these data into the dataRANS folder. The safe link: https://drive.google.com/drive/folders/174UHlnLEjkaPs7ElPy_h6lumgCCTHBng?usp=sharing
 
 [2] Secondly, run the Python file "randomForest.py". 
     if no error, you may get the following information: 
