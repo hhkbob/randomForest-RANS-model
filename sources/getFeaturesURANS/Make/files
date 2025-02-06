@@ -1,0 +1,3 @@
+getFeaturesURANS.C
+
+EXE = $(FOAM_APPBIN)/getFeaturesURANS
