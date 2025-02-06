@@ -1,0 +1,3 @@
+getRANS.C
+
+EXE = $(FOAM_APPBIN)/getRANS
