@@ -1,0 +1,3 @@
+getURANSInit.C
+
+EXE = $(FOAM_APPBIN)/getURANSInit
