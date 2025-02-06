@@ -1,0 +1,84 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    location        system;
+    object          sets;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+sets{
+setFormat raw;
+type  sets;
+libs  ("libsampling.so");
+writeControl writeTime;
+fields ( U );
+interpolationScheme cellPoint;
+
+sets
+(
+    Radial_0.5
+	{
+	    type uniform;
+		axis distance;
+		
+		start (0.02 0. 0.);
+		end   (0.02 0. 0.016);
+		nPoints 100;
+	}
+    Radial_1.0
+	{
+	    type uniform;
+		axis distance;
+		
+		start (0.04 0 0);
+		end   (0.04 0 0.016);
+		nPoints 100;
+	}
+    Radial_1.5
+	{
+	    type uniform;
+		axis distance;
+		
+		start (0.06 0 0);
+		end   (0.06 0 0.016);
+		nPoints 100;
+	}
+    Radial_2.0
+	{
+	    type uniform;
+		axis distance;
+		
+		start (0.08 0 0);
+		end   (0.08 0 0.016);
+		nPoints 100;
+	}
+    Radial_2.5
+	{
+	    type uniform;
+		axis distance;
+		
+		start (0.1 0 0);
+		end   (0.1 0 0.016);
+		nPoints 100;
+	}
+    Radial_3.0
+	{
+	    type uniform;
+		axis distance;
+		
+		start (0.12 0 0);
+		end   (0.12 0 0.016);
+		nPoints 100;
+	}
+);
+}

@@ -1,0 +1,55 @@
+FoamFile
+{
+	version             2.0;
+	format              ascii;
+	class               volScalarField;
+	location            "0";
+	object              p_rgh;
+}
+
+
+dimensions	[0 2 -2 0 0 0 0];
+
+internalField	uniform 0;
+
+boundaryField
+{
+	OUT
+	{
+		type	fixedValue;
+		value	uniform 0;
+	}
+	UPPER
+	{
+		type	fixedValue;
+		value	uniform 0;
+	}
+	PLANE
+	{
+		type	zeroGradient;
+	}
+	WALL2
+	{
+		type	zeroGradient;
+	}
+	IN
+	{
+		type	zeroGradient;
+	}
+	FRONT
+	{
+		type	wedge;
+	}
+	BACK
+	{
+		type	wedge;
+	}
+	FRONT2
+	{
+		type	wedge;
+	}
+	BACK2
+	{
+		type	wedge;
+	}
+}

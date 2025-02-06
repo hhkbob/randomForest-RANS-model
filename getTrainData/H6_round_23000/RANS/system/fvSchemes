@@ -1,0 +1,74 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \    /   O peration     | Version:  10                                  |
+|   \  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version	   2.0;
+    format	   ascii;
+    class	   dictionary;
+    location	  "system";
+    object	   fvSchemes;
+}
+//    author      Huakun Huang
+//    Email:      huanghuakun0902@163.com
+// ************************************************************************* //
+
+ddtSchemes
+{
+     default     steadyState;
+}
+
+gradSchemes
+{
+     default      Gauss linear    ;
+     grad(p)  faceMDLimited edgeCellsLeastSquares  1; 
+     grad(U)  faceMDLimited edgeCellsLeastSquares  1;
+     grad(k)  faceLimited   edgeCellsLeastSquares 1;
+     grad(omega) faceLimited edgeCellsLeastSquares 1;
+     grad(T)   faceLimited edgeCellsLeastSquares 1;
+
+}
+
+divSchemes
+{
+     default	bounded Gauss upwind;
+     div(phi,U)	       bounded  Gauss linearUpwind grad;
+     div(phi,p)        bounded  Gauss  linearUpwind grad;
+     div(phi,T)        bounded Gauss  linearUpwind grad(T);
+     div(phi,gammaInt)        bounded Gauss  linearUpwind grad;
+     div(phi,ReThetat)        bounded Gauss  linearUpwind grad;
+     div(phi,K)        bounded  Gauss linear;
+     div(phi,k)	bounded Gauss  linearUpwind grad;//linear;
+     div(phi,omega)	bounded Gauss  upwind;//linear;//upwind;//CoBlended 1 upwind 10 limitedLinear 1;
+     div(((rho*nuEff)*dev2(T(grad(U)))))           Gauss linear;
+     div((nuEff*dev2(T(grad(U)))))                 Gauss linear;
+     div(phi,symm(grad(U))) Gauss linear;
+}
+
+laplacianSchemes
+{
+	default	Gauss linear corrected;
+}
+interpolationSchemes
+{
+	default	linear;
+}
+snGradSchemes
+{
+	default	corrected;
+}
+fluxRequired
+{
+	default	no;
+	p_rgh	;
+}
+wallDist
+{
+	method	meshWave;
+	nRequired	true;
+}
+// ************************************************************************* //

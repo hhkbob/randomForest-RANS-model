@@ -1,0 +1,21 @@
+FoamFile
+{
+	version	2.0;
+	class	dictionary;
+	format	ascii;
+	location	"constant";
+	object	transportProperties;
+}
+Pr	Pr [0 0 0 0 0 0 0] 0.85;
+CpRef	CpRef [0 2 -2 -1 0 0 0] 1005.0;
+Prt	Prt [0 0 0 0 0 0 0] 0.85;
+transportModel	Newtonian;
+nu	nu [0 2 -1 0 0 0 0] 1.55E-5;
+TRef	TRef [0 0 0 1 0 0 0] 300.0;
+beta	beta [0 0 0 -1 0 0 0] 0.003;
+rhoRef	rhoRef [1 -3 0 0 0 0 0] 1.185;
+
+Uc     [0 1 -1 0 0 0 0] 8.9;
+Lc     [ 0 1 0 0 0 0 0] 0.04;
+com    [0 0 0 0 0 0 0] 0;
+rho    [1 -3 0 0 0 0 0] 1.185;

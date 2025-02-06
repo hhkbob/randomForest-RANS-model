@@ -1,0 +1,58 @@
+FoamFile
+{
+	version             2.0;
+	format              ascii;
+	class               volScalarField;
+	location            "0";
+	object              nut;
+}
+
+
+dimensions	[0 2 -1 0 0 0 0];
+
+internalField	uniform 2.67e-4;
+
+boundaryField
+{
+	OUT
+	{
+		type	calculated;
+		value	uniform 2.67e-4;
+	}
+	UPPER
+	{
+		type	calculated;
+		value	uniform 2.67e-4;
+	}
+	PLANE
+	{
+		type	nutLowReWallFunction;
+		value	uniform 2.67e-4;
+	}
+	WALL2
+	{
+		type	nutLowReWallFunction;
+		value	uniform 2.67e-4;
+	}
+	IN
+	{
+		type	calculated;
+		value	uniform 2.67e-4;
+	}
+	FRONT
+	{
+		type	wedge;
+	}
+	BACK
+	{
+		type	wedge;
+	}
+	FRONT2
+	{
+		type	wedge;
+	}
+	BACK2
+	{
+		type	wedge;
+	}
+}

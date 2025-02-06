@@ -1,0 +1,108 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \    /   O peration     | Version:  10                                  |
+|   \  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version	   2.0;
+    format	   ascii;
+    class	   dictionary;
+    location	  "system";
+    object	   fvSolution;
+}
+//    author      Huakun Huang
+//    Email:      huanghuakun0902@163.com
+// ************************************************************************* //
+solvers
+{
+    k
+     {
+		relTol	0.1;
+		preconditioner	DILU;
+		tolerance	1.0E-6;
+		maxIter	100;
+		solver	PBiCGStab;
+     }
+    "(omega|gammaInt|ReThetat)"
+     {
+		relTol	0.1;
+		preconditioner	DILU;
+		tolerance	1.0E-6;
+		maxIter	100;
+		solver	PBiCGStab;
+     }
+    U
+     {
+		relTol	0.1;
+		preconditioner	DILU;
+		tolerance	1.0E-6;
+		maxIter	100;
+		solver	PBiCGStab;
+     }
+    p_rgh
+     {
+		smoother	GaussSeidel;
+		relTol	0.1;
+		cacheAgglomeration	true;
+		nFinestSweeps	2;
+		maxIter	100;
+		nPreSweeps	0;
+		nPostSweeps	1;
+		agglomerator	faceAreaPair;
+		nCellsInCoarsestLevel	10;
+		tolerance	1.0E-6;
+		mergeLevels	1;
+		solver	GAMG;
+     }
+    phi
+     {
+		solver	GAMG;
+		smoother	GaussSeidel;
+		nPreSweeps	0;
+		nPostSweeps	1;
+		nFinestSweeps	1;
+		nCellsInCoarsestLevel	10;
+		mergeLevels	2;
+		agglomerator	faceAreaPair;
+		cacheAgglomeration	true;
+		tolerance	1.0E-8;
+		relTol	0.01;
+		maxIter	100;
+     }
+     T
+     {
+		relTol	0.1;
+		preconditioner	DILU;
+		tolerance	1.0E-6;
+		maxIter	100;
+		solver	PBiCGStab;
+     }
+}
+
+#include "solverSettings"
+
+
+relaxationFactors
+{
+    equations
+    {
+         U        0.5;
+         T        0.75;
+         k        0.75;
+         omega        0.8;
+         h        0.75;
+         gammaInt  0.75;
+         ReThetat  0.75;
+         p_rgh         0.5;
+    }
+    fields
+    {
+         p       0.5;
+         p_rgh         0.5;
+    }
+}
+
+

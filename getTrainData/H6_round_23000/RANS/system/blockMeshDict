@@ -1,0 +1,171 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile  
+{
+	version	2.0;
+	class	dictionary;
+	format	ascii;
+	location	"system";
+	object	blockMeshDict;
+}
+convertToMeters	0.01;
+edges	
+(
+);
+H_B 24;
+vertices	
+(
+    (0 0 0)
+    (1.9981 0.08724 0)
+    (1.9981 0.08724 $H_B)
+    (0 0 $H_B)
+    (1.9981 -0.08724 0)
+    (1.9981 -0.08724 $H_B)
+
+    (39.96193 1.74478 0)  //6
+    (39.96193 1.74478 $H_B)  //7
+
+    (39.96193 -1.74478 0) //8
+    (39.96193 -1.74478 $H_B) //9
+    
+    (2.098 0.0916 0) //10
+    (2.098 0.0916 $H_B) //11
+    (2.098 -0.0916 0) //12
+    (2.098 -0.0916 $H_B) //13
+
+    (1.9981 0.08724 $H_B)//14
+    (0 0 $H_B)//15
+    (1.9981 -0.08724 $H_B)//16
+
+    //(1.9981 0.08724 24)//17
+    //(0 0 88)//18
+    //(1.9981 -0.08724 24)//19
+
+);
+
+SV ( (0.5 0.7 100) (0.5 0.3 0.15));
+blocks	
+(
+       hex (0 4 1 0 3 5 2 3) (30 1 140)     
+       simpleGrading 
+       ( 
+         0.08
+         1 
+         $SV
+       )
+
+
+       hex (1 4 8 6 2 5 9 7) (1 180 140) 
+       simpleGrading 
+       ( 
+          1 
+          (
+            (0.22 0.6 10)//1.02
+            (0.78 0.4 3) 
+          )
+          $SV
+       )      
+);
+boundary	
+(
+	BACK
+	{
+		type wedge;
+		faces
+		(
+			(0 3 5 4)             
+		);
+	}
+	/*OUT2
+	{
+		type patch;
+		faces
+		(
+                       (1 4 5 2)
+		);
+	}*/
+        IN
+	{
+		type patch;
+		faces
+		(
+                        (3 5 2 3)                     
+		);
+	}
+	UPPER
+	{
+		type patch;
+		faces
+		(
+                       (2 5 9 7)
+                       
+		);
+	}
+	PLANE
+	{
+		type wall;
+		faces
+		(
+                       (0 4 1 0)
+                       (1 4 8 6)
+		);
+	}
+        AXIS
+        {
+                type empty;
+                faces
+                (  
+                      (0 3 3 0)
+                );
+        }
+	FRONT
+	{
+		type wedge;
+		faces
+		(
+		     (0 1 2 3)
+		);
+	}
+        FRONT2
+	{
+		type wedge;
+		faces
+		(
+                      (1 6 7 2)
+		);
+	}
+        BACK2
+	{
+		type wedge;
+		faces
+		(
+                      (4 5 9 8)
+		);
+	}
+        OUT
+	{
+		type patch;
+		faces
+		(
+                      (6 8 9 7)
+		);
+	}
+        /*in1
+	{
+		type patch;
+		faces
+		(
+                      (10 12 13 11)
+		);
+	}*/
+        
+);
+mergePatchPairs
+(
+);

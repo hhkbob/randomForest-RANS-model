@@ -1,0 +1,68 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0; 
+    format      ascii;
+    class       volVectorField; 
+    location    "0";
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField uniform (0 0 0); 
+
+boundaryField
+{
+    BACK
+    {
+        type            wedge;
+    }
+    /*IN
+    {
+        type        surfaceNormalFixedValue;
+        refValue    nonuniform List<scalar>
+        
+    }*/
+    #include    "velDict"
+    WALL2
+    {
+        type            fixedValue;
+		value           uniform (0 0 0);
+    }
+    UPPER
+    {
+        type            fixedValue;
+		value           uniform (0 0 -0.445);
+    }
+    PLANE
+    {
+        type            fixedValue;
+		value           uniform (0 0 0);
+    }
+    FRONT
+    {
+        type            wedge;
+    }
+    FRONT2
+    {
+        type            wedge;
+    }
+    BACK2
+    {
+        type            wedge;
+    }
+    OUT
+    {
+        type            pressureInletOutletVelocity;
+        value           uniform (0 0 0);
+    }
+}
+

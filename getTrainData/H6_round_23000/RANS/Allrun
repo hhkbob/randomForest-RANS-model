@@ -1,0 +1,49 @@
+#!/bin/sh
+
+
+blockMesh
+
+##### get the cell coordinate
+postProcess -func writeCellCentres
+
+##### set the inlet boundary condition
+(cd exit && g++ k.cpp -o k && ./k)
+(cd exit && g++ omega.cpp -o omega && ./omega)
+g++ vel.cpp -o vel && ./vel
+
+##### clean the case
+rm -rf 0/C*
+rm -rf grad* 
+rm -rf validate/current_result/*png
+
+decomposePar
+
+##### run case
+mpirun -np 4 buoyantBoussinesqSimpleFoam -parallel | tee log.buoyantBoussinesqSimpleFoam
+
+reconstructPar -latestTime
+
+##### get the Reynolds stresses
+buoyantBoussinesqSimpleFoam -postProcess -func R
+
+##### rename the Reynolds stresses R
+latestTime=$(foamListTimes -case . | tail -1)
+directory="$latestTime"
+keyword="turbulenceProperties"
+files=$(find "$directory" -type f | grep "$keyword")
+if [ -z "$files" ]; then
+    echo "Cannot find the Reynolds stresses file in the directory '$directory'"
+else
+    ##### rename the Reynolds stress
+    mv "$files" "$latestTime/R"
+fi
+
+postProcess -func sets
+postProcess -func gradT
+postProcess -func Nu
+(cd validate && ./graphy)
+
+##### Get inputFeatures.txt and energy.txt if you want to use this case as training data
+getRANS 
+
+

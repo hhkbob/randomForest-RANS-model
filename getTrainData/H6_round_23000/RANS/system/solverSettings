@@ -1,0 +1,35 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \    /   O peration     | Version:  10                                  |
+|   \  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version	   2.0;
+    format	   ascii;
+    class	   dictionary;
+    location	  "system";
+    object	   solverSettings;
+}
+//    author      Huakun Huang
+//    Email:      huanghuakun0902@163.com
+// ************************************************************************* //
+SIMPLE
+{
+    nNonOrthogonalCorrectors	1;
+    momentumPredictor	true; 
+    pRefPoint	(0 0.0 0.0);
+    pRefValue	101325.0;
+     residualControl
+     {
+		p_rgh	1.0E-4;
+		k	1.0E-5;
+		T	1.0E-6;
+		U	1.0E-4;
+		omega	1.0E-4;
+		ReThetat 1e-4;
+		gammaInt 1e-4;
+     }
+}

@@ -1,0 +1,60 @@
+FoamFile
+{
+	version             2.0;
+	format              ascii;
+	class               volScalarField;
+	location            "0";
+	object              alphat;
+}
+
+
+dimensions	[0 2 -1 0 0 0 0];
+
+internalField	uniform 0.0;
+
+boundaryField
+{
+	OUT
+	{
+		type	calculated;
+		value	uniform 0.0;
+	}
+	PLANE
+	{
+		type	alphatJayatillekeWallFunction;
+		value	uniform 0.0;
+		Prt	0.85;
+	}
+	WALL2
+	{
+		type	alphatJayatillekeWallFunction;
+		value	uniform 0.0;
+		Prt	0.85;
+	}
+    UPPER
+    {
+        type   calculated;
+        value  uniform 0.0;
+    }
+	IN
+	{
+		type	calculated;
+		value	uniform 0.0;
+	}
+	FRONT
+	{
+		type	wedge;
+	}
+	BACK
+	{
+		type	wedge;
+	}
+	FRONT2
+	{
+		type	wedge;
+	}
+	BACK2
+	{
+		type	wedge;
+	}
+}

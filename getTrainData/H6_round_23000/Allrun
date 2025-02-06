@@ -1,0 +1,6 @@
+#!/bin/sh
+
+(cd RANS && ./Allrun)
+(cd Fidelity && getEnergy)
+dataRANS
+
