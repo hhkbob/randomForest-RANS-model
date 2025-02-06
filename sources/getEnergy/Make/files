@@ -1,0 +1,3 @@
+getEnergy.C
+
+EXE = $(FOAM_APPBIN)/getEnergy
