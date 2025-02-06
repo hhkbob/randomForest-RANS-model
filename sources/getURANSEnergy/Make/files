@@ -1,0 +1,3 @@
+getURANSEnergy.C
+
+EXE = $(FOAM_APPBIN)/getURANSEnergy
