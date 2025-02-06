@@ -10,11 +10,11 @@ windows-10 WSL
 ## conda install scikit-learn=1.2.2
 
 ##[1]
-(1) Make sure the following path is correct in line 85 in the getInit/getInit.C
+(1) Make sure the following path is correct in line 84 in the getInit/getInit.C
     system("python /home/hhk/Documents/PINNv/include/regressionSolverRANS.py");
-(2) Make sure the following path is correct in line 140 in the getInit/getInit.C
+(2) Make sure the following path is correct in line 139 in the getInit/getInit.C
     system("python /home/hhk/Documents/PINNv/include/checkData.py");
-(3) Make sure the following path is correct in line 24 in the include/regressionSolverRANS.py
+(3) Make sure the following path is correct in line 30-31 in the include/regressionSolverRANS.py
     model_path = '/mnt/hgfs/D/machineLearning/randomForest/PINN_RANS_Model.pkl'
 
 ##[2] define parameters in constant/transportProperties
