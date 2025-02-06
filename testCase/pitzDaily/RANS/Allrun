@@ -1,0 +1,13 @@
+#!/bin/sh
+
+##### first step: run to 0.1s
+cp -rf system/setp/controlDict1 system/controlDict
+pisoFoam
+
+##### second step: run to 0.2s, begin
+cp -rf system/setp/controlDict2 system/controlDict
+pisoFoam 
+
+
+
+

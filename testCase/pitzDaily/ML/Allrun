@@ -1,0 +1,15 @@
+#!/bin/sh
+
+##### copy the RANS result
+latestTime=$(foamListTimes -case ../RANS | tail -1)
+cp -rf "../RANS/$latestTime" 0
+
+##### get four ML coefficients for ML
+getURANSInit
+
+pisoFoam 
+
+
+
+
+

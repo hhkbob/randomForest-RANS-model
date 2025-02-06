@@ -1,0 +1,99 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2312                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       dictionary;
+    location    "0.2/uniform/functionObjects";
+    object      functionObjectProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+cdf7e925f5746741c316f5fbcf39ad0dfca90775
+{
+    probes
+    {
+        scalar
+        {
+            average(p)      -167.4880435335888;
+            min(p)          -237.9399108258203;
+            max(p)          -96.55690507579052;
+        }
+        label
+        {
+            size(p)         7;
+        }
+    }
+}
+
+fieldAverage1
+{
+    U
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+    p
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+    k
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+    nut
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+    omega
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+    phi
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+    Pk
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+    Pw
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+    Dk
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+    Dw
+    {
+        totalIter       10000;
+        totalTime       0.09999999999999393;
+    }
+}
+
+surfaceSampling
+{
+    U
+    {
+        file            "<case>/postProcessing/surfaceSampling/0.2/nearWall.vtp";
+    }
+}
+
+
+// ************************************************************************* //
