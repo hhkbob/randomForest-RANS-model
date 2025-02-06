@@ -1,0 +1,5 @@
+#!/bin/sh
+
+(cd RANS && ./clean)
+(cd ML && ./clean)
+

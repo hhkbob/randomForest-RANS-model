@@ -1,0 +1,4 @@
+#!/bin/sh
+
+(cd RANS && ./Allrun)
+(cd ML && ./Allrun)
