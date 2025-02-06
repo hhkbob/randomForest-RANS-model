@@ -1,0 +1,3 @@
+getInit.C
+
+EXE = $(FOAM_APPBIN)/getInit
