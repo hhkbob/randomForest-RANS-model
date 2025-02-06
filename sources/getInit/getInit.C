@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
     Info<<"output features for PINN"<<endl;
     #include "outputFeatures.H"
     
-    system("python /home/hhk/OpenFOAM/PINNv/include/regressionSolverRANS.py");
+    system("python /home/hhk/OpenFOAM/sources/include/regressionSolverRANS.py");
     
     //read the data file
     FILE *dats = fopen("outputResult.txt", "r");
