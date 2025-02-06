@@ -2,7 +2,7 @@ This is an example for our paper "A random forest machine learning in turbulence
 
 [1] First, download sources, and compile them. Detailed guidance can be found in the sources folder.
 
-[2] Go to the getTrainData folder. you can prepare your data according to the guidance. Or download my training data directly from Google Drive and put these data into the dataRANS folder. The safe link: https://drive.google.com/drive/folders/174UHlnLEjkaPs7ElPy_h6lumgCCTHBng?usp=sharing
+[2] Go to the getTrainData folder, you can prepare your data according to the guidance. Or download my training data directly from Google Drive and put these data into the dataRANS folder. The safe link: https://drive.google.com/drive/folders/174UHlnLEjkaPs7ElPy_h6lumgCCTHBng?usp=sharing
 
 [3] Run the Python file "randomForest.py". 
     if no error, you may get the following information: 
