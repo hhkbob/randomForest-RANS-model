@@ -1,0 +1,8 @@
+#!/bin/sh
+(cd dataRANS && wclean)
+(cd getInit &&  wclean)
+(cd getRANS &&  wclean)
+(cd getEnergy &&  wclean)
+(cd getURANSEnergy &&  wclean)
+(cd getURANSInit &&  wclean)
+#------------------------------------------------------------------------------

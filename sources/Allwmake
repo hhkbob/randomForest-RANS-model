@@ -1,0 +1,9 @@
+#!/bin/sh
+(cd dataRANS && wmake)
+(cd getInit && wmake)
+(cd getInitANN && wmake)
+(cd getRANS && wmake)
+(cd getEnergy && wmake)
+(cd getURANSEnergy && wmake)
+(cd getURANSInit && wmake)
+#------------------------------------------------------------------------------
