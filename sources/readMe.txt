@@ -17,29 +17,13 @@ windows-10 WSL
 (3) Make sure the following path is correct in line 30-31 in the include/regressionSolverRANS.py
     model_path = '/mnt/hgfs/D/machineLearning/randomForest/PINN_RANS_Model.pkl'
 
-##[2] define parameters in constant/transportProperties
-Uc: reference velocity m/s
-Lc: reference length m
-com: compressible case-1, incompressible case-0
-rho: reference density kg/m3
-TRef: reference temperature
+##[2]
+(1) Run Allwclean
+(2) Run Allwmake
+(3) Go to PINNkOmegaSST folder, and open run.sh. Make sure the path is correct.
+    and then, run run.sh
+    if there is no error, you will get the PINNkOmegaSST turbulence model.
 
-######################################
-####### Get training data ############
-######################################
-##[1] To get Pk_rans, Dk_rans, Pw_rans, Dw_rans (energy.txt), in RANS folder, run
-steady cases: getRANS
-unsteady cases: getURANSEnergy
-
-##[2] To get Pk_fidelity, Dk_fidelity, Pw_fidelity, Dw_fidelity (energy.txt), in Fidelity folder, run
-steady cases: getEnergy/getLES (if LES or DNS)
-unsteady cases: getURANSEnergy, getFeaturesURANS
-
-##[3] To get Pk_f, Dk_f, Pw_f, Dw_f, run
-dataRANS
-
-*** Note: you can select a specific region by setting Xmin, Ymin, Zmin, Xmax, Ymax, Zmax
-    in constant/transportProperties
 
 
 
