@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
     system("mv constant/Pwf 0/Pwf");
     system("mv constant/Dwf 0/Dwf");
     Info<<"Check all output value"<<endl;
-    system("python /home/hhk/OpenFOAM/PINNv/include/checkData.py");
+    system("python /home/hhk/OpenFOAM/sources/include/checkData.py");
     Info<< "End\n" << endl;
 
     return 0;
