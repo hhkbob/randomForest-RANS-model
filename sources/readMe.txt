@@ -23,6 +23,7 @@ windows-10 WSL
 (3) Go to PINNkOmegaSST folder, and open run.sh. Make sure the path is correct.
     and then, run run.sh
     if there is no error, you will get the PINNkOmegaSST turbulence model.
+(4) Go to testCases or getTrainData folder. Try to run a tutorial, or prepare your data.
 
 
 
