@@ -7,6 +7,10 @@ This is an example for our paper "A random forest machine learning in turbulence
 [3] Run the Python file "randomForest.py". 
     if no error, you may get the following information: 
     ![rf](https://github.com/user-attachments/assets/574075f6-46e4-4dcc-a32a-c66f3a6094b3)
+
+    You can also download our well-trained model through the following link:
+    https://pan.baidu.com/s/1c5_if2aKbJk1xDyD-3vZxw?pwd=yxsj
+    Extract the code: yxsj
     
 [4] Compute the relative error. Run the Python file "testError.py". The output error file is "errors.txt"
 
