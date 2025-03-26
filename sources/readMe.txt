@@ -27,7 +27,7 @@ windows-10 WSL
     your_openFoam/src/TurbulenceModels/turbulenceModels/Base/kOmegaSST
    And then, go to the path: your_openFoam/src/TurbulenceModels/turbulenceModels/
    Now, you can compile the kOmegaSST model by running Allwmake
-(4) Go to testCases or getTrainData folder. Try to run a tutorial, or prepare your data.
+(6) Go to testCases or getTrainData folder. Try to run a tutorial, or prepare your data.
 
 
 
