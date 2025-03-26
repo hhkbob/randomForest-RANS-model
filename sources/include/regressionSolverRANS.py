@@ -45,13 +45,6 @@ def output(ResponsesPred):
     with open('outputResult.txt', 'w') as f:
         for prediction in ResponsesPred:
                  f.write(" ".join(map(str, prediction.tolist())) + "\n")
-    """ 
-    with open('outputResult.txt', 'w') as f:
-        for xi in range(ResponsesPred.shape[0]):
-            for yi in range(ResponsesPred.shape[1]):
-                f.write("%g\t" % ResponsesPred[xi][yi])
-            f.write('\n')
-    """
     f.close()
     print('Machine learning is done')   
 
@@ -59,12 +52,8 @@ def output(ResponsesPred):
 
 #print('done')
 def main():
-    #parser = argparse.ArgumentParser(description='Predict using the random forest method.')
-    #parser.add_argument('--v', type=int, nargs='+', required=True, help='Select a version of random forest')
-    #args = parser.parse_args()
-    
     inputFeatures = loadTrainData()
-    version = 2 #input('Please select a version number, 1-old, 2-new: ')
+    version = 2 
     regModel = loadModel(int(version))
     ResponsesPred = predict(inputFeatures, regModel)
     output(ResponsesPred)
