@@ -25,7 +25,7 @@ windows-10 WSL
     if there is no error, you will get the PINNkOmegaSST turbulence model.
 (5) Go to kOmegaSST folder, and use these codes to replace the files in 
     your_openFoam/src/TurbulenceModels/turbulenceModels/Base/kOmegaSST
-   And then, go to the path: your_openFoam/src/TurbulenceModels/turbulenceModels/
+   And then, go to the path: your_openFoam/src/TurbulenceModels/
    Now, you can compile the kOmegaSST model by running Allwmake
 (6) Go to testCases or getTrainData folder. Try to run a tutorial, or prepare your data.
 
