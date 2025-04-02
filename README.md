@@ -1,4 +1,4 @@
-This is an example for our paper "Huakun Huang, Qingmo Xie, Tai'an Hu, Huan Hu, Peng Yu, A random forest machine learning in turbulence closure modeling for complex flows and heat transfer based on the non-equilibrium turbulence assumption" [Download the preprint] (https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5017217)
+This is an example for our paper "Huakun Huang, Qingmo Xie, Tai'an Hu, Huan Hu, Peng Yu, A random forest machine learning in turbulence closure modeling for complex flows and heat transfer based on the non-equilibrium turbulence assumption" [Download the preprint](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5017217)
 
 [1] Go to the getTrainData folder, you can prepare your data according to the guidance. Or download my training data directly from Google Drive and put these data into the dataRANS folder. The safe link: https://drive.google.com/drive/folders/174UHlnLEjkaPs7ElPy_h6lumgCCTHBng?usp=sharing
 
