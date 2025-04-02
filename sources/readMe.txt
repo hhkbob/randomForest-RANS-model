@@ -12,8 +12,10 @@ windows-10 WSL
 ##[1]
 (1) Make sure the following path is correct in line 84 in the getInit/getInit.C
     system("python /home/hhk/Documents/PINNv/include/regressionSolverRANS.py");
+    Please note that in some cases, python should be python3.
 (2) Make sure the following path is correct in line 139 in the getInit/getInit.C
     system("python /home/hhk/Documents/PINNv/include/checkData.py");
+    Please note that in some cases, python should be python3.
 (3) Make sure the following path is correct in line 30-31 in the include/regressionSolverRANS.py
     model_path = '/mnt/hgfs/D/machineLearning/randomForest/PINN_RANS_Model.pkl'
 
