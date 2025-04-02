@@ -122,72 +122,6 @@
     // add the FS1 feature to the inputfeature
     //-First inilization feature
     //- ref: Data-driven RANS closures for wind turbine wakes under neutral conditions
-    /*volTensorField S_ = S/(mag(S)+omega*0.09);
-    volTensorField O_ = O/(mag(O)+omega*0.09);
-
-    Info<<"calculate Ap"<<endl;
-    volTensorField Aps =MycrossProduct(-II, tgradP);
-    volScalarField magUs = mag(U & tgradU);
-    volTensorField Ap_ = S_*0;
-    Ap_ = normTensorField(Ap_, Aps, omega*0.09*sqrt(k_));
-    
-    //volTensorField Ap_ = S_*0;
-    Info<<"calculate Aks"<<endl;
-    volTensorField Ak_ = S_*0;
-    
-    Info<<"calculate Ak"<<endl;
-    volTensorField Aks =MycrossProduct(-II, gradk); 
-    Ak_ = normTensorField(Ak_, Aks, magUs);
-    
-
-     inputFeatures[11] = S_&&S_;
-     inputFeatures[12] = (S_&S_)&&S_;
-     inputFeatures[13] = O_ && O_;
-     inputFeatures[14] = Ap_&& Ap_;
-     inputFeatures[15] = Ak_ && Ak_;
-     inputFeatures[16] = (O_&O_)&&S_;
-     inputFeatures[17] = O_&O_ & S_&&S_;
-     inputFeatures[18] = O_&O_ & S_&O_ & S_&&S_;
-     inputFeatures[19] = Ap_&Ap_ && S_;
-     inputFeatures[20] = Ap_ & Ap_ & S_&&S_;
-     inputFeatures[21] = Ap_ & Ap_ &S_&Ap_&S_&&S_;
-     inputFeatures[22] = Ak_&Ak_ &&S_;
-     inputFeatures[23] = Ak_&Ak_ & S_&&S_;
-     inputFeatures[24] = Ak_&Ak_ &S_&Ak_&S_&&S_;
-     inputFeatures[25] = O_&&Ap_;
-     inputFeatures[26] = Ap_&&Ak_;
-     inputFeatures[27] = O_&&Ak_;
-     inputFeatures[28] = O_&Ap_&&S_;
-     inputFeatures[29] = O_&Ap_&S_&&S_;
-     inputFeatures[30] = O_&Ak_&&S_;
-     inputFeatures[31] = O_&Ak_&S_&&S_;
-     inputFeatures[32] = O_&Ap_&&S_;
-     inputFeatures[33] = Ap_&Ak_&S_&&S_;
-     inputFeatures[34] = O_&O_&Ap_&&S_;
-     inputFeatures[35] = Ap_&Ap_&O_&&S_;
-     inputFeatures[36] = O_&O_&Ap_&S_&&S_;
-     inputFeatures[37] = Ap_&Ap_&O_&S_&&S_;
-     inputFeatures[38] = O_&O_&S_&Ap_&S_&&S_;
-     inputFeatures[39] = Ap_&Ap_&S_&O_&S_&&S_;
-     inputFeatures[40] = O_&O_&Ak_&&S_;
-     inputFeatures[41] = Ak_&Ak_&O_&&S_;
-     inputFeatures[42] = O_&O_&Ak_&S_&&S_;
-     inputFeatures[43] = Ak_&Ak_&O_&S_&&S_;
-     inputFeatures[44] = O_&O_&S_&Ak_&S_&&S_;
-     inputFeatures[45] =  Ak_&Ak_&S_&O_&S_&&S_;
-     inputFeatures[46] =  Ap_&Ap_&Ak_&&S_;
-     inputFeatures[47] =  Ak_&Ak_&Ap_&&S_;
-     inputFeatures[48] =  Ap_&Ap_&S_&Ak_&S_&&S_;
-     inputFeatures[49] =  Ak_&Ak_&S_&Ap_&S_&&S_;
-     inputFeatures[50] =  O_&Ap_&&Ak_;
-     inputFeatures[51]=  O_&Ap_&Ak_&&S_;
-     inputFeatures[52] =  O_&Ak_&Ap_&&S_;
-     inputFeatures[53] =  O_&Ap_&Ak_&S_&&S_;
-     inputFeatures[54] =  O_&Ak_&Ap_&S_&&S_;
-     inputFeatures[55] =  O_&Ap_&S_&Ak_&S_&&S_;*/
-
-
-
     //Info<<"get its and ksi"<<endl;
     //volScalarField ksi = q1*0;
     //volScalarField ita = q1*0;    
@@ -235,29 +169,7 @@
         inputFeatures[7][celli] = normalization(q8[celli], qb8[celli]);
         inputFeatures[8][celli] = normalization(magR[celli], k_[celli]);
         inputFeatures[9][celli] = normalization(qb10[celli], 1.0/Lc.value());
-        
-        
-        /*eigen eig;
-        eig.getEigenvalue(b[celli]);
-        ksi[celli] = eig.ksi;
-        ita[celli] = eig.ita;  
-        norm1[celli] = eig.norm1;
-        norm2[celli] = eig.norm2;
-        norm3[celli] = eig.norm3;
-        magTensor[celli] = eig.magTensor;
-        tensor eigenVector = eig.eigenVector_;
-        for(int i=0; i<9; i++)
-        {
-            fprintf(dat_, "%g\t", eigenVector.xx());
-            fprintf(dat_, "%g\t", eigenVector.xy());
-            fprintf(dat_, "%g\t", eigenVector.xz());
-            fprintf(dat_, "%g\t", eigenVector.yx());
-            fprintf(dat_, "%g\t", eigenVector.yy());
-            fprintf(dat_, "%g\t", eigenVector.yz());
-            fprintf(dat_, "%g\t", eigenVector.zx());
-            fprintf(dat_, "%g\t", eigenVector.zy());
-            fprintf(dat_, "%g\n", eigenVector.zz());
-        }*/
+ 
     } 
     //fclose(dat_);  
     tgradU.clear();
