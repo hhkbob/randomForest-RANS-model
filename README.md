@@ -15,9 +15,10 @@ This is an example for our paper "Huakun Huang, Qingmo Xie, Tai'an Hu, Huan Hu, 
 [4] Compute the relative error. Run the Python file "testError.py". The output error file is "errors.txt"
 
 [5] Plot the RMS error and the relative error. Run the Python file "errorPlot.py"
-
-    <img src="https://github.com/user-attachments/assets/03adc12c-d8dd-4f96-ba12-400e0540310a" alt="error" width="400" title="erro1">
-    <img src="https://github.com/user-attachments/assets/4d87e1c1-162b-46f5-bb33-171125a755d4" alt="density" width="400" title="erro1">
+    <div>
+        <img src="https://github.com/user-attachments/assets/03adc12c-d8dd-4f96-ba12-400e0540310a" alt="error" width="400" title="erro1">
+        <img src="https://github.com/user-attachments/assets/4d87e1c1-162b-46f5-bb33-171125a755d4" alt="density" width="400" title="erro1">
+    </div>
 
 [6] If everything is OK, you can go to the testCase folder and try the method according to the guidance.
 
