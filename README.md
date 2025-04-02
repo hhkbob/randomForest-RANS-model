@@ -5,8 +5,8 @@ This is an example for our paper "Huakun Huang, Qingmo Xie, Tai'an Hu, Huan Hu, 
 [2] Download sources, and compile them. Detailed guidance can be found in the sources folder.
 
 [3] Run the Python file "randomForest.py". 
-    if no error, you may get the following information: 
-    ![rf](https://github.com/user-attachments/assets/574075f6-46e4-4dcc-a32a-c66f3a6094b3)
+    if there is no error, you may get the following information: 
+    <img src="https://github.com/user-attachments/assets/574075f6-46e4-4dcc-a32a-c66f3a6094b3" alt="output" width="200" title="output">
 
     You can also download our well-trained model through the following link:
     https://pan.baidu.com/s/1c5_if2aKbJk1xDyD-3vZxw?pwd=yxsj
