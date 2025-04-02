@@ -23,7 +23,7 @@ This is an example for our paper "Huakun Huang, Qingmo Xie, Tai'an Hu, Huan Hu, 
 [6] If everything is OK, you can go to the testCase folder and try the method according to the guidance.
 
 **The training cases space for the current SST-ML method**
-<div align="center">
+<div>
     <img src="https://github.com/user-attachments/assets/956ac7f8-c77d-42b2-b1f9-f3b3b9f4b3a9" alt="space", width="600" title="space">
 </div>
 
